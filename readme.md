@@ -85,8 +85,8 @@ Certifique-se de ter os seguintes itens instalados em sua máquina:
 
 ```bash
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Danimmota/ClinicalClient.git
+cd ClinalClient
 
 ```
 2. **Configure o ambiente com Docker**
@@ -110,15 +110,15 @@ Teste os endpoints disponíveis para verificar funcionalidades de agendamento, c
 ___
 
 
-| BASEPATH  | > /profissionais |
-|-----------|------------|
-| POST      | > /profissionais |
-| GETALL    | > profissionais/listar |
-| GETBYID   | > profissionais/{cpfProfissional} |
-| GETBYNOME | > profissionais/nome |
-| GETBYESPECIALIZACAO | > profissionais/especializacao |
-| PUT       | > profissionais/{cpfProfissional} |
-| DELETE    | > profissionais/{cpfProfissional} |
+| BASEPATH  | /profissionais                  |
+|-----------|---------------------------------|
+| POST      | /profissionais                  |
+| GETALL    | profissionais/listar            |
+| GETBYID   | profissionais/{cpfProfissional} |
+| GETBYNOME | profissionais/nome              |
+| GETBYESPECIALIZACAO | profissionais/especializacao    |
+| PUT       | profissionais/{cpfProfissional} |
+| DELETE    | profissionais/{cpfProfissional} |
 
 ## BasePath: /profissionais
 
@@ -270,23 +270,23 @@ Profissional excluído com sucesso!
 ```
 ___
 
-| BASEPATH  | > /agendamentos |
-|-----------|------------|
-| POST      | > /agendamentos |
+| BASEPATH  | /agendamentos |
+|-----------|---------------|
+| POST      | /agendamentos |
 
 ## BasePath: /agendamentos
 
 ### 1. Criação de um agendamento
 - Método: *POST*
 - Endpoint:https://localhost:8081/agendamentos
-- BodyParams (Json):
+- BodyParams (Json)
 - Ex body:
 ```
 {
-    "date_time": "",
-	"servico_id": "",
-	"profissional_id": "", 
-	"client_id": ""
+    "servico_id": "",
+	"cpf_client": "",
+	"id_agenda": "", 
+	"date_time": ""
 }
 ```
 ___

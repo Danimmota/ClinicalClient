@@ -2,28 +2,20 @@ package com.clical.client.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotNull;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="agendamento")
-@NoArgsConstructor
-@AllArgsConstructor
-public class Agendamento implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
+public class Agendamento{
 
-    @NotBlank
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_agendamento")
     private Integer idAgendamento;
 
-    @NotBlank
+    @NotNull
     @Column(name="servico_id")
     private Integer servicoId;
 
@@ -31,13 +23,12 @@ public class Agendamento implements Serializable {
     @Column(name="cpf_client")
     private String cpfClient;
 
-    @NotBlank
+    @NotNull
     @Column(name="id_agenda")
     private Integer idAgenda;
 
-    @NotBlank
     @Column(name="date_time")
-    private LocalDateTime dateTime;
+    private LocalDateTime dateTime = LocalDateTime.now();
 
     public Integer getIdAgendamento() {
         return idAgendamento;

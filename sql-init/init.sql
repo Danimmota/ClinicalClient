@@ -57,7 +57,7 @@ create table if not exists agendamento (
 );
 
 create table if not exists user (
-	id_user CHAR(36) NOT NULL AUTO_INCREMENT,
+	id_user CHAR(36) NOT NULL,
 	nome VARCHAR(50) NOT NULL,
 	telefone VARCHAR(20) NOT NULL,
 	email VARCHAR(50) NOT NULL UNIQUE,

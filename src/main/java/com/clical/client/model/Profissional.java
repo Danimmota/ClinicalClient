@@ -18,7 +18,6 @@ public class Profissional implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @NotBlank
     @Id
     @CPF
     @Column(name="cpf_profissional")

@@ -12,6 +12,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class AgendamentoService {
 
@@ -41,18 +43,19 @@ public class AgendamentoService {
     public AgendamentoDTO saveAgendamento(AgendamentoDTO dto) {
         Agendamento agendamento = toAgendamento(dto);
 
-
         Client client = clientRepository.findById(dto.getCpfClient())
                 .orElseThrow(() -> new EntityNotFoundException("Cliente com CPF " + dto.getCpfClient() + " não encontrado"));
         Servico servico = servicoRepository.findById(dto.getServicoId())
                 .orElseThrow(() -> new EntityNotFoundException("Serviço com ID " + dto.getServicoId() + " não encontrado"));
 
+        agendamento.setDateTime(LocalDateTime.now());
         agendamento = agendamentoRepository.save(agendamento);
 
         agendamentoProducer.publishMassegeEmail(agendamento, client, servico);
 
         return toAgendamentoDTO(agendamento);
     }
+//    @Transactional
 //    public Agendamento saveAgendamento(Agendamento agendamento, Client client, Servico servico) {
 //        agendamento = agendamentoRepository.save(agendamento);
 //        agendamentoProducer.publishMassegeEmail(agendamento, client, servico);

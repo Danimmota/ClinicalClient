@@ -17,7 +17,6 @@ public class Agenda implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @NotBlank
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_agenda")

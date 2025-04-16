@@ -3,7 +3,7 @@ services:
     image: mysql:8.0
     container_name: db-client
     environment:
-      MYSQL_ROOT_PASSWORD: xxxxxxx
+      MYSQL_ROOT_PASSWORD: 3J^,+VGAg64]GpDaWx8V
       MYSQL_DATABASE: clinical_db
     ports:
       - "3307:3306"
@@ -31,7 +31,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db-client:3307/clinical_db
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: xxxxxx
+      SPRING_DATASOURCE_PASSWORD: 3J^,+VGAg64]GpDaWx8V
 
 volumes:
   db_data:

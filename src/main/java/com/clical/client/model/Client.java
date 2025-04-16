@@ -22,7 +22,6 @@ public class Client implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @NotBlank
     @Id
     @CPF
     @Column(name="cpf_client")
@@ -36,6 +35,7 @@ public class Client implements Serializable {
     @Column(name="data_nascimento")
     private LocalDate dataNascimento;
 
+    @NotBlank
     @Column(name="cep")
     private String cep;
 

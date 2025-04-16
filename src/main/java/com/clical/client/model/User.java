@@ -21,7 +21,6 @@ public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @NotBlank
     @Id
     @Column(name="id_user")
     private UUID idUser;
@@ -52,7 +51,7 @@ public class User implements Serializable {
     private UserPerfil perfil;
 
     @Column(name="criacao_usuario")
-    private LocalDateTime criacaoUsuario;
+    private LocalDateTime criacaoUsuario = LocalDateTime.now();
 
     public UUID getIdUser() {
         return idUser;

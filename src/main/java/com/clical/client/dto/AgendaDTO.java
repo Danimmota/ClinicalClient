@@ -1,7 +1,6 @@
 package com.clical.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.criteria.CriteriaBuilder;
 
 import java.time.LocalDateTime;
 

@@ -1,21 +1,17 @@
 package com.clical.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import java.io.Serializable;;
 import java.time.LocalDateTime;
 
-public class EmailMessageDTO implements Serializable {
+public class EmailMessageDTO {
 
-    @NotBlank
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     @JsonProperty("email_id")
     private Integer emailId;
 
@@ -48,9 +44,11 @@ public class EmailMessageDTO implements Serializable {
     private String tipo;
 
     @JsonProperty("data_criacao")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dataCriacao;
 
     @JsonProperty("data_envio")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dataEnvio;
 
     public Integer getEmailId() {
