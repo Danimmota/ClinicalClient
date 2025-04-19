@@ -9,6 +9,8 @@ services:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+#      - ./sql-init:/docker-entrypoint-initdb.d
+
 
 #  rabbitmq:
 #    image: rabbitmq:3-management
