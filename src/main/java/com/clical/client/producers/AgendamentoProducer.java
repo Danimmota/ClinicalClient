@@ -28,11 +28,14 @@ public class AgendamentoProducer {
     public void publishMassegeEmail(Agendamento agendamento,Client client, Servico servico) {
         try {
             EmailMessageDTO emailMessageDTO = new EmailMessageDTO();
+
+            emailMessageDTO.setClientId(client.getCpfClient());
             emailMessageDTO.setEmailDestinatario(client.getEmail());
-            emailMessageDTO.setAssunto(servico.getNome());
+            emailMessageDTO.setAssunto("Agendamento serviço "+servico.getNome());
             emailMessageDTO.setDataCriacao(agendamento.getDateTime());
             emailMessageDTO.setTipo(String.valueOf(EmailTipo.CRIACAO_AGENDAMENTO));
-            emailMessageDTO.setCorpo(client.getNome());
+            emailMessageDTO.setCorpo("Caro: " + client.getNome() +
+                    "\nSeu agendamento foi realizado com sucesso!");
 
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());

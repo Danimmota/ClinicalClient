@@ -11,36 +11,31 @@ import java.time.LocalDateTime;
 
 public class EmailMessageDTO {
 
-    @NotNull
     @JsonProperty("email_id")
     private Integer emailId;
 
-    @NotBlank
     @JsonProperty("client_id")
     private String clientId;
 
-    @NotBlank
     @Email
     @JsonProperty("email_remetente")
     private String emailRemetente;
 
-    @NotBlank
     @Email
     @JsonProperty("email_destinatario")
     private String emailDestinatario;
 
-    @NotBlank
     @JsonProperty("assunto")
     private String assunto;
 
-    @NotBlank
     @Lob
+    @JsonProperty("corpo")
     private String corpo;
 
     @JsonProperty("status_email")
     private String statusEmail;
 
-    @NotBlank
+    @JsonProperty("tipo")
     private String tipo;
 
     @JsonProperty("data_criacao")

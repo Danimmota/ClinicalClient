@@ -18,8 +18,9 @@ services:
 #    ports:
 #      - "5672:5672"      # Porta de comunicação AMQP
 #      - "15672:15672"    # Painel web
-#    networks:
-#      - clinic-network
+#    environment:
+#      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME} # nome de usuário do RabbitMQ
+#      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD} # senha do RabbitMQ
 
   client-service:
     build:

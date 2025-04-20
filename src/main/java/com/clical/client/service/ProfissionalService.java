@@ -55,7 +55,9 @@ public class ProfissionalService {
                 .orElseThrow(() -> new ResourceNotFoundException("Profissional não encontrado para o CPF informado."));
 
         Profissional atualizado = toProfissinal(profissionaisDTO);
-        atualizado.setEndereco(existente.getCpfProfissional());
+
+        // CPF não muda, garante que seja o mesmo
+        atualizado.setCpfProfissional(existente.getCpfProfissional());
 
         return toProfissionalDTO(profissionalRepository.save(atualizado));
     }

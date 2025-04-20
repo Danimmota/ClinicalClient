@@ -286,7 +286,6 @@ ___
     "servico_id": "",
 	"cpf_client": "",
 	"id_agenda": "", 
-	"date_time": ""
 }
 ```
 ___
