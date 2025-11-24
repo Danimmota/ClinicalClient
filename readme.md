@@ -5,7 +5,7 @@
 
 Este projeto foi desenvolvido com o objetivo de facilitar o dia a dia de clínicas que possuem diversos profissionais de diferentes especialidades. A aplicação oferece um ambiente unificado para o gerenciamento completo da clínica, incluindo agendamentos, controle de profissionais, envio de e-mails e muito mais. 
 
-Esta aplicação tem como objetivo ser uma *API RESTfull* capaz de fornecer endpoints para o gerenciamento de.
+Esta aplicação tem como objetivo ser uma *API RESTfull* capaz de fornecer endpoints para o gerenciamento de clinicas.
 
 ## 📋 Descrição do Sistema
 
@@ -20,6 +20,7 @@ O sistema permite:
 ### ⚙️ Funcionalidades já implementadas
 
 - Cadastro, edição, listagem e exclusão de profissionais.
+- Implementar um agente de IA para auxiliar em dúvidas.
 - Cadastro e gerenciamento de usuários administrativos.
 - Criação de agendamento de serviços com envio automático de e-mail.
 - Sistema testado via Postman com abordagem orientada a testes (TDD).
