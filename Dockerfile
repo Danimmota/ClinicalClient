@@ -1,14 +1,26 @@
 # Usa a imagem oficial do Java 17
-FROM openjdk:17-jdk-slim
+FROM alpine:latest
 
-# Define o diretório de trabalho dentro do container
+# Instala o OpenJDK 17
+RUN apk add --no-cache openjdk17
+
+# Define diretório de trabalho
 WORKDIR /app
 
-# Copia o arquivo .jar para dentro do container
-COPY target/client-0.0.1-SNAPSHOT.jar client-app.jar
+# Copia os arquivos do projeto
+COPY . .
 
-# Expõe a porta usada pela aplicação Spring Boot
+# Dá permissão ao mvnw
+RUN chmod +x mvnw
+
+# Builda a aplicação
+RUN ./mvnw clean package -DskipTests
+
+# Renomeia o jar gerado
+RUN cp target/client-0.0.1-SNAPSHOT.jar client-app.jar
+
+# Expõe a porta
 EXPOSE 8081
 
-# Comando para rodar a aplicação
+# Inicia a aplicação
 ENTRYPOINT ["java", "-jar", "client-app.jar"]
