@@ -5,7 +5,7 @@ server.port=8082
 #spring.datasource.url=jdbc:mysql://db-client:3306/clinical_db
 spring.datasource.url=jdbc:mysql://localhost:3306/clinical_db
 spring.datasource.username=root
-spring.datasource.password=PASSWORD DATABASE
+spring.datasource.password=PASSWORD_DATABASE
 
 # JPA / Hibernate
 spring.jpa.hibernate.ddl-auto=none
@@ -13,13 +13,13 @@ spring.jpa.show-sql=true
 #spring.jpa.properties.hibernate.jdbc.lo.non_contextual_creation=true
 
 #RabbitMQ
-spring.rabbitmq.addresses=ADDRESSES AMPQ
+spring.rabbitmq.addresses=ADDRESSES_RABBITMQ
 broker.queue.email.name=default.email
 
 #Email
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
-spring.mail.username=USERNAME AMPQ
-spring.mail.password=PASSWORD AMPQ
+spring.mail.username=EMAIL
+spring.mail.password=PASSWORD
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true

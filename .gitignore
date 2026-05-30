@@ -4,11 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-## Srping ##
-!**/application.properties
+## SPRING ##
 application.properties
 local.application.properties
-!**/local.application.properties
+application.yml
+application-local.yml
+.env
 
 ### STS ###
 .apt_generated
