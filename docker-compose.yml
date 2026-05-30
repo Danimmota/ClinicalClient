@@ -12,15 +12,15 @@ services:
 #      - ./sql-init:/docker-entrypoint-initdb.d
 
 
-#  rabbitmq:
-#    image: rabbitmq:3-management
-#    container_name: rabbitmq
-#    ports:
-#      - "5672:5672"      # Porta de comunicação AMQP
-#      - "15672:15672"    # Painel web
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 #    environment:
-#      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME} # nome de usuário do RabbitMQ
-#      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD} # senha do RabbitMQ
+#      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+#      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
 
 #  client-service:
 #    build:
