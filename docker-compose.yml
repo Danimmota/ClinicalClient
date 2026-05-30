@@ -22,20 +22,20 @@ services:
 #      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME} # nome de usuário do RabbitMQ
 #      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD} # senha do RabbitMQ
 
-  client-service:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: client-service
-    depends_on:
-      - db-client
-#      - rabbitmq
-    ports:
-      - "8081:8081"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db-client:3306/clinical_db
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 3J^,+VGAg64]GpDaWx8V
+#  client-service:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: client-service
+#    depends_on:
+#      - db-client
+##      - rabbitmq
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://db-client:3306/clinical_db
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: 3J^,+VGAg64]GpDaWx8V
 
 volumes:
   db_data:

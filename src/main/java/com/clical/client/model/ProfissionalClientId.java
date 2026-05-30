@@ -27,4 +27,5 @@ public class ProfissionalClientId {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
+
 }

@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+## Srping ##
+!**/application.properties
+application.properties
+local.application.properties
+!**/local.application.properties
+
 ### STS ###
 .apt_generated
 .classpath
